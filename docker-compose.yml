@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  web:
+    image: nginx:latest
+    privileged: true
+    environment:
+      - DB_PASSWORD=myplaintextpassword
+    ports:
+      - "0.0.0.0:80:80"
+    network_mode: host
+
+  app:
+    image: ubuntu:latest
+    environment:
+      - SECRET_KEY=hardcodedsensitivekey
+    volumes:
+      - /:/host
+    ports:
+      - "0.0.0.0:8080:8080"
+
