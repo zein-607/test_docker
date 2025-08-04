@@ -1,5 +1,5 @@
 # Vulnerable Dockerfile_1
-FROM ubuntu:latest
+FROM ubuntu:24.10
 
 # Run as root user (default in most base images)
 USER root
